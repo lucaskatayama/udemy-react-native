@@ -6,11 +6,9 @@ import React from 'react';
 import { Text, AppRegistry } from 'react-native';
 
 // Create a Component
-const App = () => {
-  return (
-    <Text>Some Text</Text>
-  );
-};
+const App = () => (
+  <Text>Some Text</Text>
+);
 
 // Render it to device
 AppRegistry.registerComponent('albuns', () => App);
