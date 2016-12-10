@@ -22,17 +22,18 @@ const styles = {
   }
 };
 
-const Button = ({ onPress, title }) => (
+const Button = ({ onPress, title, children }) => (
   <TouchableOpacity onPress={onPress} style={styles.buttonStyle}>
     <Text style={styles.textStyle}>
-      {title}
+      {title || children}
     </Text>
   </TouchableOpacity>
 );
 
 Button.propTypes = {
   onPress: PropTypes.func,
-  title: PropTypes.string
+  title: PropTypes.string,
+  children: PropTypes.any
 }
 
 export default Button;
