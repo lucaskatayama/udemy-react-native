@@ -21,3 +21,4 @@ Spinner.propTypes = {
 }
 
 export default Spinner;
+export { Spinner };
