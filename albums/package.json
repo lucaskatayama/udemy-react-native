@@ -11,8 +11,16 @@
 		"react-native": "0.38.0"
 	},
 	"devDependencies": {
+		"babel-eslint": "^7.1.1",
 		"babel-jest": "17.0.2",
 		"babel-preset-react-native": "1.9.0",
+		"eslint": "^3.12.0",
+		"eslint-config-esnext": "^1.6.0",
+		"eslint-config-react-native": "^1.6.0",
+		"eslint-plugin-babel": "^4.0.0",
+		"eslint-plugin-import": "^2.2.0",
+		"eslint-plugin-react": "^6.8.0",
+		"eslint-plugin-react-native": "^2.2.0",
 		"jest": "17.0.3",
 		"jest-react-native": "17.1.0",
 		"react-test-renderer": "~15.4.0-rc.4"
