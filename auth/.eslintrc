@@ -1,6 +1,7 @@
 {
   "extends": ["react-native"],
   "rules": {
-    "class-methods-use-this": 0
+    "class-methods-use-this": 0,
+    "no-invalid-this": 0
   }
 }
