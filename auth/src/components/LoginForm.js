@@ -1,23 +1,44 @@
 import React, { Component } from 'react';
+import { Text } from 'react-native';
+import firebase from 'firebase';
 import { Button, Card, CardSection, Input } from './common';
+
+const styles = {
+  errorStyle: {
+    fontSize: 20,
+    color: 'red',
+    alignSelf: 'center'
+  }
+}
 
 class LoginForm extends Component {
   state = {
     username: '',
-    password: ''
+    password: '',
+    error: null
   }
 
-  constructor(){
-    super();
-    this.handleOnChangeUsername = this.handleOnChangeUsername.bind(this);
-    this.handleOnChangePassword = this.handleOnChangePassword.bind(this);
-  }
-
-  handleOnChangeUsername(text) {
+  handleOnChangeUsername = (text) => {
     this.setState({username: text});
   }
-  handleOnChangePassword(text) {
+  handleOnChangePassword = (text) => {
     this.setState({password: text});
+  }
+
+  handleButtonClick = () => {
+    this.setState({error: null});
+    const { username, password } = this.state;
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(username, password)
+      .catch(() => {
+        firebase
+          .auth()
+          .createUserWithEmailAndPassword(username, password)
+          .catch(() => {
+            this.setState({error: 'Authentication Failed.'});
+          });
+      });
   }
 
   render() {
@@ -41,9 +62,11 @@ class LoginForm extends Component {
             onChangeText={this.handleOnChangePassword}
           />
         </CardSection>
-        <CardSection />
+        <Text style={styles.errorStyle}>
+          {this.state.error}
+        </Text>
         <CardSection>
-          <Button>Log in</Button>
+          <Button onPress={this.handleButtonClick}>Log in</Button>
         </CardSection>
       </Card>
     );
