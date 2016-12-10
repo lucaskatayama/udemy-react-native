@@ -27,13 +27,6 @@ const styles = {
     height: 300,
     flex: 1,
     width: null
-  },
-  footerStyle: {
-    display: 'block',
-    position: 'relative',
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
   }
 };
 
@@ -76,11 +69,10 @@ class Album extends Component {
           </View>
         </CardSection>
         <CardSection>
-          <Image resizeMode="center" source={{ uri: image }} style={styles.imageStyle}/>
+          <Image resizeMode="cover" source={{ uri: image }} style={styles.imageStyle}/>
         </CardSection>
         <CardSection>
           <Button
-            style={styles.footerStyle}
             title="Buy now"
             onPress={this.handleOnPress}
           />
