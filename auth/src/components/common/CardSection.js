@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { View } from 'react-native';
 
+
 const styles = {
     cardStyle: {
       padding: 5,
