@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 
 const styles = {
   textStyle: {
@@ -19,6 +19,11 @@ const styles = {
     marginLeft: 5,
     marginRight: 5,
     borderRadius: 5
+  },
+  containerStyle: {
+    flex: 1,
+    alignSelf: 'stretch',
+    position: 'relative'
   }
 };
 
